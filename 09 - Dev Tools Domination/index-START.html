@@ -18,29 +18,55 @@
     }
 
     // Regular
-
+      console.log("practice")
     // Interpolated
+      console.log("hello i am a %s string!", "💩")
 
     // Styled
+      console.log(`%c styling`, `font-size:50px; background: red; text-shadow: 10px`)
 
     // warning!
+    console.warn("oh NOOOO!")
 
     // Error :|
+    console.error("wrong")
 
     // Info
-
+    console.info("xxxx")
     // Testing
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector("p");
+    console.log(p);
+    console.dir(p)
 
     // Grouping together
+
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`My name is ${dog.name}`);
+      console.log(`I am ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
 
     // timing
 
+  const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  console.time("fetch time")
+  fetch(endpoint)
+    .then(prom => prom.json())
+    .then(data => {
+      console.timeEnd("fetch time")
+      console.log(data)
+      console.table(data)
+     })
+
+  
   </script>
 </body>
 </html>
