@@ -109,9 +109,6 @@ function handleCheck(e){
       if (checkbox === this || checkbox === lastCheck){
         isBetween = !isBetween;
       }
-      if (isBetween && checkbox.checked){
-        checkbox.checkbox = false;
-      }
       if (isBetween){
         checkbox.checked = true;
       } 
