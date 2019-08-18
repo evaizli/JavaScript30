@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Console Tricks!</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <h2 class="js">test</h2>
 
-  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <script>
+      // cons
+      // const dogs = [{ name: "Snickers", age: 2 }, { name: "hugo", age: 8 }];
 
-  <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+      // function makeGreen() {
+      //   const p = document.querySelector("p");
+      //   p.style.color = "#BADA55";
+      //   p.style.fontSize = "50px";
+      // }
 
-    function makeGreen() {
-      const p = document.querySelector('p');
-      p.style.color = '#BADA55';
-      p.style.fontSize = '50px';
-    }
+      // // Regular
+      // console.log("practice");
+      // // Interpolated
+      // console.log("hello i am a %s string!", "💩");
 
-    // Regular
-      console.log("practice")
-    // Interpolated
-      console.log("hello i am a %s string!", "💩")
+      // // Styled
+      // console.log(
+      //   `%c styling`,
+      //   `font-size:50px; background: red; text-shadow: 10px`
+      // );
 
-    // Styled
-      console.log(`%c styling`, `font-size:50px; background: red; text-shadow: 10px`)
+      // // warning!
+      // console.warn("oh NOOOO!");
 
-    // warning!
-    console.warn("oh NOOOO!")
+      // // Error :|
+      // console.error("wrong");
 
-    // Error :|
-    console.error("wrong")
+      // // Info
+      // console.info("xxxx");
+      // // Testing
 
-    // Info
-    console.info("xxxx")
-    // Testing
+      // // clearing
+      // console.clear();
 
-    // clearing
-    console.clear();
+      // // Viewing DOM Elements
+      // const p = document.querySelector("p");
+      // console.log(p);
+      // console.dir(p);
 
-    // Viewing DOM Elements
-    const p = document.querySelector("p");
-    console.log(p);
-    console.dir(p)
+      // // Grouping together
 
-    // Grouping together
+      // dogs.forEach(dog => {
+      //   console.groupCollapsed(`${dog.name}`);
+      //   console.log(`My name is ${dog.name}`);
+      //   console.log(`I am ${dog.age} years old`);
+      //   console.groupEnd(`${dog.name}`);
+      // });
 
-    dogs.forEach(dog => {
-      console.groupCollapsed(`${dog.name}`);
-      console.log(`My name is ${dog.name}`);
-      console.log(`I am ${dog.age} years old`);
-      console.groupEnd(`${dog.name}`);
-    })
+      // // counting
 
-    // counting
+      // // timing
 
-    // timing
+      const endpoint =
+        "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+      console.time("fetch time");
+      let detail;
+      fetch(endpoint)
+        .then(prom => prom.json())
+        .then(data => {
+          detail = data;
+          // console.timeEnd("fetch time")
+          // console.log(data)
+          // console.table(data)
+        });
 
-  const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
-  console.time("fetch time")
-  fetch(endpoint)
-    .then(prom => prom.json())
-    .then(data => {
-      console.timeEnd("fetch time")
-      console.log(data)
-      console.table(data)
-     })
-
-  
-  </script>
-</body>
+      console.table(detail);
+    </script>
+  </body>
 </html>
